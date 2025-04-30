@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-[#658C4A] mb-12">Bejerijilerimiz</h2>
+
+        {% if stylists %}
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+                {% for stylist in stylists %}
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <div class="h-64 overflow-hidden">
+                            {% if stylist.image %}
+                                <img src="{{ stylist.image.url }}" alt="{{ stylist.name }}" class="w-full h-full object-cover">
+                            {% else %}
+                                <img src="{% static 'img/default_stylist.jpg' %}" alt="Default" class="w-full h-full object-cover">
+                            {% endif %}
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">{{ stylist.name }}</h3>
+                            <p class="text-gray-500 mb-4">{{ stylist.specialty }}</p>
+                            <a href="{% url 'appointment' stylist.id %}"
+                               class="inline-block bg-[#658C4A] text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300">
+                                Öňünden Ýazgy
+                            </a>
+                            <br>
+                            <a href="{% url 'stylist_detail' stylist.id %}"
+                               class="inline-block mt-2 text-sm text-blue-600 hover:underline">
+                                Bejerijiniň Sahypasyna Görkez
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-center text-gray-500 text-lg">Saç bejerijiler tapylmady.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

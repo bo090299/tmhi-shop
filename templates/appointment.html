@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="max-w-xl mx-auto mt-16 p-8 bg-white shadow-2xl rounded-xl border border-gray-200">
+    <h2 class="text-3xl font-extrabold mb-6 text-[#658C4A] text-center tracking-wide">
+        {{ stylist.name }} bilen ýazgy
+    </h2>
+
+    <form id="appointment-form" method="post" class="space-y-6">
+        {% csrf_token %}
+
+        <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Adyňyz</label>
+            <input type="text" name="customer_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#658C4A] transition duration-300">
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Telefon belgiňiz</label>
+            <input type="tel" name="phone_number" pattern="^\+?[0-9]{10,15}$" placeholder="Telefon belgiňiz" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#658C4A] transition duration-300">
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Ýazgy wagty</label>
+            <input type="datetime-local" name="appointment_date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#658C4A] transition duration-300">
+        </div>
+
+        <div class="text-center pt-4">
+            <button id="submit-button" type="submit" class="bg-[#658C4A] hover:bg-green-700 text-white font-semibold py-2 px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg">
+                Ýazga al
+            </button>
+        </div>
+    </form>
+</section>
+
+<script>
+    document.getElementById('appointment-form').addEventListener('submit', function(e) {
+        // Disable the submit button to prevent multiple submissions
+        document.getElementById('submit-button').disabled = true;
+
+        // Optionally, display a loading spinner or text (e.g., 'Submitting...')
+        document.getElementById('submit-button').innerText = 'Ýazgy edilýär...';
+
+        // Form will be submitted after this action
+    });
+</script>
+{% endblock %}
+    

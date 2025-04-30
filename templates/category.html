@@ -1,0 +1,40 @@
+<div class="container mx-auto px-4 py-10">
+    <div class="flex flex-wrap justify-center gap-10">
+        <!-- Programmalar -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 text-center">
+            <a href="{% url 'products' %}?category=1" class="block">
+                <p class="text-2xl text-[#658C4A] mb-6 font-semibold">Programmalar</p>
+                <div class="cursor-pointer rounded overflow-hidden w-full h-[300px]">
+                    <img src="../static/img/programm.jpg" alt="Programmalar" class="object-cover w-full h-full rounded transition-transform transform hover:scale-110 duration-500">
+                </div>
+            </a>
+        </div>
+        <!-- Güller -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 text-center">
+            <a href="{% url 'products' %}?category=2" class="block">
+                <p class="text-2xl text-[#658C4A] mb-6 font-semibold">Güller</p>
+                <div class="cursor-pointer rounded overflow-hidden w-full h-[300px]">
+                    <img src="../static/img/flowers.jpg" alt="Güller" class="object-cover w-full h-full rounded transition-transform transform hover:scale-110 duration-500">
+                </div>
+            </a>
+        </div>
+        <!-- Suratlar -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 text-center">
+            <a href="{% url 'products' %}?category=3" class="block">
+                <p class="text-2xl text-[#658C4A] mb-6 font-semibold">Suratlar</p>
+                <div class="cursor-pointer rounded overflow-hidden w-full h-[300px]">
+                    <img src="../static/img/picture.jpg" alt="Suratlar" class="object-cover w-full h-full rounded transition-transform transform hover:scale-110 duration-500">
+                </div>
+            </a>
+        </div>
+        <!-- Dellekhana -->
+        <div class="w-full sm:w-1/2 lg:w-1/4 text-center">
+            <a href="{% url 'salon' %}?category=4" class="block">
+                <p class="text-2xl text-[#658C4A] mb-6 font-semibold">Dellekhana</p>
+                <div class="cursor-pointer rounded overflow-hidden w-full h-[300px]">
+                    <img src="../static/img/salon.jpg" alt="Dellekhana" class="object-cover w-full h-full rounded transition-transform transform hover:scale-110 duration-500">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

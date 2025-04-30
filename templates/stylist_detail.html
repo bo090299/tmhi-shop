@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-[#658C4A] text-center mb-8">
+        {{ stylist.name }} – Bejerijiniň Ýazgylary
+    </h2>
+
+    {% if appointments %}
+        <div class="space-y-4">
+            {% for appt in appointments %}
+                <div class="p-4 border rounded shadow-sm bg-white">
+                    <p><strong>Ady:</strong> {{ appt.customer_name }}</p>
+                    <p><strong>Telefon:</strong> {{ appt.phone }}</p>
+                    <p><strong>Sene:</strong> {{ appt.date }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-gray-500 text-center">Bu dellekçä ýazgy ýok.</p>
+    {% endif %}
+</section>
+{% endblock %}

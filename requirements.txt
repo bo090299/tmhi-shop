@@ -1,7 +1,14 @@
 asgiref==3.7.2
 Django==5.0
 django-browser-reload==1.12.1
+<<<<<<< HEAD
 pillow==10.2.0
 sqlparse==0.4.4
 typing_extensions==4.9.0
 tzdata==2023.3
+=======
+django-jazzmin==2.6.0
+pillow==10.2.0
+sqlparse==0.4.4
+tzdata==2023.3
+>>>>>>> 9b05524 (30.04.2025 update)
